@@ -25,4 +25,4 @@ while continuer:
         print(f"Code valide : {code}")
         continuer = True
     else:
-        print("Code invalide. Réessayez.")
+        print("Code invalide")
