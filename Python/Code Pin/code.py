@@ -48,5 +48,7 @@ while continuer:
             continuer = True
         else:
             print("Code invalide")
-    if choix == "2":
+    elif choix == "2":
+        continuer = False
+    else :
         continuer = False
