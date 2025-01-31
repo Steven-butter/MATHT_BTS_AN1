@@ -19,7 +19,6 @@ def chiffres(code):
 def verifier_code(code):
     return carnb(code) and chiffres(code)
 
-# Boucle principale
 while continuer:
     code = input("Entrez un code à 4 chiffres : ")
     if verifier_code(code):
