@@ -45,10 +45,10 @@ def verifier_code(code):
 
 ###########################################
 ### Lettre de A à F max : 1 = A puis C avec +2      /////     4 = D puis F avec +2
-### code_cr vas contenir le résultat de fonction avec 1er cryptage ex 1234 contenu var == BCDE
-### code_crf vas contenir le résultat avec 2eme cryptage ex BCDE == DEFG
-### definir la lettre grace a la position du chiffre dans la liste puis +2
-### Operation a faire : 0 qui est pos 1 donc == A puis A +2 == C
+### id_c va prendre la position du chiffre dans la variable chiffre et stock la position
+### id_l prend la position du chiffre 2 places au dessus de lui
+### 
+### 
 
 def crypter(code):
     for i in range(len(code)):
@@ -87,9 +87,8 @@ while continuer:
 
     if choix == "2":
         code = str(input("Entrez un code à 4 chiffres pour le crypter : "))
-        code_cr = code
         if verifier_code(code):
-            print(f"Code valide : {code}")
+            crypter(code)
 
             continuer = True
         else:
