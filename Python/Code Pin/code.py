@@ -3,7 +3,7 @@
 #######################################
 
 continuer = True
-chiffre = str([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+chiffre = [str(i) for i in range(10)]
 lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 #######################################
@@ -28,7 +28,7 @@ def carnb(code):
 
 def chiffres(code):
     if all(caractere in chiffre for caractere in code):
-        print("Le code n'est composer que de chiffres chiffres")
+        print("Le code n'est composer que de chiffres")
         return True
     else:
         print("Le code n'est pas composer que des chiffres")
@@ -52,8 +52,13 @@ def verifier_code(code):
 
 def crypter(code):
     for i in range(len(code)):
-        id_c = code[i].index(chiffre)
+        id_c = chiffre.index(code[i])
         id_l = id_c + 2
+        print("id_c : ", id_c)
+        print("id_l : ", id_l)
+        #lettrefin = str(id_l).index(lettres)
+        lettrefin = lettres[id_l - 1]
+        print("Lettre de fin : ", lettrefin)
         
 
 
