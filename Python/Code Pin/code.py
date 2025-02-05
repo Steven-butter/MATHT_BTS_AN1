@@ -1,3 +1,7 @@
+#######################################
+###           Variables             ###
+#######################################
+
 continuer = True
 chiffre = str([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
@@ -22,14 +26,13 @@ def carnb(code):
 #######################################
 
 def chiffres(code):
-        while len(code):
-            if code in chiffre:
-                print("Le code a des chiffres")
-                return True
-            else :
-                print("le code a pas de chiffres")
-                return False
-        
+    if all(caractere in chiffre for caractere in code):
+        print("Le code n'est composer que de chiffres chiffres")
+        return True
+    else:
+        print("Le code n'est pas composer que des chiffres")
+        return False
+    
 #########################################
 ### Verifier si les deux condition sont valides
 ### Demande au fonction quelle valeur est retourner
@@ -41,7 +44,9 @@ def verifier_code(code):
 while continuer:
     print("=== Menu code pin ===")
     print("1. Verifier un code pin")
-    print("2. Quitter")
+    print("2. Crypter un code pin")
+    print("4. Decrypter un code pin et le vérifier")
+    print("3. Quitter")
     choix = input("\nVotre choix : ")
     if choix == "1":
         code = str(input("Entrez un code à 4 chiffres : "))
