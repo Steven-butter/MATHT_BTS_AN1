@@ -1,6 +1,5 @@
 chiffre = [str(i) for i in range(10)]
 lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-id_lettrefin = 0
 
 code = str(1)
 def crypter(code):
