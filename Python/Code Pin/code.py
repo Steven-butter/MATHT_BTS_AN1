@@ -37,17 +37,24 @@ def chiffres(code):
 ### Verifier si les deux condition sont valides
 ### Demande au fonction quelle valeur est retourner
 ### Si les deux valeur
+####################################################
 
 def verifier_code(code):
     return carnb(code) and chiffres(code)
 
 while continuer:
+
+    ############ MENU ###########
+
     print("=== Menu code pin ===")
     print("1. Verifier un code pin")
     print("2. Crypter un code pin")
-    print("4. Decrypter un code pin et le vérifier")
-    print("3. Quitter")
+    print("3. Decrypter un code pin et le vérifier")
+    print("4. Quitter")
     choix = input("\nVotre choix : ")
+
+    ########## C1 VERIFIER PIN INPUT DIRECT ############# OK
+
     if choix == "1":
         code = str(input("Entrez un code à 4 chiffres : "))
         if verifier_code(code):
@@ -55,7 +62,23 @@ while continuer:
             continuer = True
         else:
             print("Code invalide")
+
+    ########## C2 CRYPTER PIN ET STOCKER #################
+
     if choix == "2":
-        continuer = False
-    else :
-        continuer = False
+        code = str(input("Entrez un code à 4 chiffres : "))
+        if verifier_code(code):
+            print(f"Code valide : {code}")
+            continuer = True
+        else:
+            print("Code invalide")
+
+    ########### C3 DECRYPTER ET VERIFIER PIN ##############
+
+    if choix == "3":
+        code = str(input("Entrez un code à 4 chiffres : "))
+        if verifier_code(code):
+            print(f"Code valide : {code}")
+            continuer = True
+        else:
+            print("Code invalide")
