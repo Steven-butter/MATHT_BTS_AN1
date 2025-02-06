@@ -45,12 +45,13 @@ def verifier_code(code):
 
 ###########################################
 ### Lettre de A à F max : 1 = A puis C avec +2      /////     4 = D puis F avec +2
-### id_c va prendre la position du chiffre dans la variable chiffre et stock la position
-### id_l prend la position du chiffre 2 places au dessus de lui
-### 
+### id_c position chiffre dans la liste
+### id_l prend la position du chiffre 2 places au dessus de lui donc la position de la bonne lettre
+### code_cr : résultat du code crypter
 ### 
 
 def crypter(code):
+    code_cr = ""
     for i in range(len(code)):
         id_c = chiffre.index(code[i])
         id_l = id_c + 2
@@ -59,6 +60,8 @@ def crypter(code):
         #lettrefin = str(id_l).index(lettres)
         lettrefin = lettres[id_l - 1]
         print("Lettre de fin : ", lettrefin)
+        code_cr += lettres[id_l - 1]
+        print("Code Crypter : ", code_cr)
         
 
 
@@ -89,7 +92,6 @@ while continuer:
         code = str(input("Entrez un code à 4 chiffres pour le crypter : "))
         if verifier_code(code):
             crypter(code)
-
             continuer = True
         else:
             print("Code a crypter invalide")
