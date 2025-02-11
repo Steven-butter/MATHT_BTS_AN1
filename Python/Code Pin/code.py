@@ -55,13 +55,13 @@ def crypter(code):
     for i in range(len(code)):
         id_c = chiffre.index(code[i])
         id_l = id_c + 2
-        print("id_c : ", id_c)
-        print("id_l : ", id_l)
+        #print("id_c : ", id_c)
+        #print("id_l : ", id_l)
         #lettrefin = str(id_l).index(lettres)
-        lettrefin = lettres[id_l - 1]
-        print("Lettre de fin : ", lettrefin)
-        code_cr += lettres[id_l - 1]
-        print("Code Crypter : ", code_cr)
+        lettrefin = lettres[id_l]
+        #print("Lettre de fin : ", lettrefin)
+        code_cr += lettres[id_l]
+        #print("Code Crypter : ", code_cr)
         
 
 
