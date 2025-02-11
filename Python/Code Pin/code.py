@@ -115,7 +115,7 @@ while continuer:
         else:
             print("Code a crypter invalide")
 
-    ########### C3 DECRYPTER ET VERIFIER PIN ##############
+    
 
     if choix == "3":
         code_crypter = crypter(code)
@@ -127,3 +127,8 @@ while continuer:
                 continuer = True
         else:
             print("Code non décrypter")
+
+    ########### C4 QUITTER ##############
+
+    if choix == "4":
+        continuer = False
