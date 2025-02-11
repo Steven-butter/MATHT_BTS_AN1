@@ -5,6 +5,8 @@
 continuer = True
 chiffre = [str(i) for i in range(10)]
 lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+#code_cr = ""
+code_crypter = ""
 
 #######################################
 ### Verifier la longueur de l'entré ###
@@ -48,24 +50,35 @@ def verifier_code(code):
 ### id_c position chiffre dans la liste
 ### id_l prend la position du chiffre 2 places au dessus de lui donc la position de la bonne lettre
 ### code_cr : résultat du code crypter
-### 
-
-#def crypter(code):
+        
+def crypter(code):
     code_cr = ""
     for i in range(len(code)):
         id_c = chiffre.index(code[i])
-        id_l = id_c + 2
-        #print("id_c : ", id_c)
-        #print("id_l : ", id_l)
-        #lettrefin = str(id_l).index(lettres)
-        lettrefin = lettres[id_l]
-        #print("Lettre de fin : ", lettrefin)
+        #print(id_c)
+        id_l = (id_c + cle) %10
+        #print(id_l)
         code_cr += lettres[id_l]
-        #print("Code Crypter : ", code_cr)
-        
-def crypter():
-    code_cr = ""
-    for i in range(len(code)):
+        #print(code_cr)
+    print(code_cr)
+    return code_cr
+
+#######################################################
+# FONCTION DECRYPTAGE
+#######################################################
+
+def decrypter(code_cr):
+    #print(code_cr)
+    code_dcr = ""
+    for i in range(len(code_cr)):
+        id_lc = lettres.index(code_cr[i])
+        #print(id_c)
+        id_cc = (id_lc - cle) %10
+        #print(id_l)
+        code_dcr += chiffre[id_cc]
+        #code_cr += 
+    print(code_dcr)
+    return code_dcr
         
 
 
@@ -94,6 +107,8 @@ while continuer:
 
     if choix == "2":
         code = str(input("Entrez un code à 4 chiffres pour le crypter : "))
+        code_v = code
+        cle = int(input("Entrez la clé de cryptage : "))
         if verifier_code(code):
             crypter(code)
             continuer = True
@@ -103,9 +118,12 @@ while continuer:
     ########### C3 DECRYPTER ET VERIFIER PIN ##############
 
     if choix == "3":
-        code = str(input("Entrez un code à 4 chiffres : "))
-        if verifier_code(code):
-            print(f"Code valide : {code}")
-            continuer = True
+        code_crypter = crypter(code)
+        if crypter != "":
+            cle = int(input("Entrez la clé de décryptage : "))
+            decrypter(code_crypter)
+            if decrypter == code_v :
+                print(f"Code décrypter ")
+                continuer = True
         else:
-            print("Code invalide")
+            print("Code non décrypter")
