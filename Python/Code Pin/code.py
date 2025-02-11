@@ -24,7 +24,7 @@ def carnb(code):
 
 #######################################
 # Verifier si c'est que des chiffres ##
-### code = variable d'entré du code  ##
+##  code = variable d'entré du code  ##
 ## retourne true si condition valide ##
 #######################################
 
