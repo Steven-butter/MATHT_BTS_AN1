@@ -4,7 +4,7 @@
 
 continuer = True
 chiffre = [str(i) for i in range(10)]
-lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 
 #######################################
 ### Verifier la longueur de l'entré ###
@@ -22,7 +22,7 @@ def carnb(code):
 
 #######################################
 # Verifier si c'est que des chiffres ##
-### code = variable d'entré du code | num-ok valeur boucle
+### code = variable d'entré du code  ##
 ## retourne true si condition valide ##
 #######################################
 
@@ -50,7 +50,7 @@ def verifier_code(code):
 ### code_cr : résultat du code crypter
 ### 
 
-def crypter(code):
+#def crypter(code):
     code_cr = ""
     for i in range(len(code)):
         id_c = chiffre.index(code[i])
@@ -62,6 +62,10 @@ def crypter(code):
         #print("Lettre de fin : ", lettrefin)
         code_cr += lettres[id_l]
         #print("Code Crypter : ", code_cr)
+        
+def crypter():
+    code_cr = ""
+    for i in range(len(code)):
         
 
 
