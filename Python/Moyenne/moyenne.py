@@ -3,9 +3,9 @@
 ##########################################
 
 
-        ### matière coef 
+### matière coef 
 matiere = [("Math", 3), ("SISR", 12), ("Cyber" , 14)]
-        ### Boucle
+### Boucle
 continuer = True
 
 ############################################
@@ -17,14 +17,19 @@ continuer = True
 ### matiere : liste les matiere /// note : liste de note
 ### sort une liste de note
 
-
 def entrer_notes(matiere):
     note = []
     for i in range (len(matiere)):
         note.append(input(f'Saisir la note de {matiere[i][0]} : '))
     print(note)
     return note
-    
+
+
+
+#############################################
+###         Programme Principale          ###
+#############################################
+
 
 while continuer:
 
@@ -37,7 +42,7 @@ while continuer:
     print("4. Quitter")
     choix = input("\nVotre choix : ")
 
-    ########## C1 VERIFIER PIN INPUT DIRECT ############# OK
+    ########## C1 Entrer les notes ############# OK
 
     if choix == "1":
         entrer_notes(matiere)
