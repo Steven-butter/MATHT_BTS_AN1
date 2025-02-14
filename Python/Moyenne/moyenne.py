@@ -21,10 +21,10 @@ def entrer_notes(matiere):
     note = []
     for i in range (len(matiere)):
         note.append(input(f'Saisir la note de {matiere[i][0]} : '))
-    print(note)
+    #print(note)
     return note
 
-
+test = entrer_notes(matiere)
 
 #############################################
 ###         Programme Principale          ###
@@ -46,3 +46,6 @@ while continuer:
 
     if choix == "1":
         entrer_notes(matiere)
+        notes = entrer_notes(matiere)
+        for i in range (len(matiere)):
+            print(f'Voici le tableau de note : {matiere[i][0], notes[i]}')
