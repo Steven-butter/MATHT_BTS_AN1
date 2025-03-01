@@ -15,16 +15,13 @@ continuer = True
 ############################################
 ### A1 : Calcul points bonus
 
-def calcul_bonus():
-    print("Entrer les points bonus")
-    bonus = int(input("Points bonus : "))
+def calcul_bonus(bonus):
     if bonus < 10:
-        bonus = 0
+        bonus = 0 or bonus > 20 or bonus < 0
         return bonus
     else:
         bonus = bonus - 10
         bonus = bonus * 2
-        print(f'Vous avez {bonus} points bonus')
         return bonus
 
 
@@ -39,6 +36,20 @@ def entrer_notes(matiere):
         note.append(input(f'Saisir la note de {matiere[i][0]} : '))
     return note
 
+### A3 : Calcul de la moyenne
+### note : liste des notes /// matiere [i][1] : coef de la matière
+
+def calcul_moyenne(notes, matiere, bonus):
+    moyenne = 0
+    coef = 0
+    for i in range (len(notes)):
+        moyenne += int(notes[i]) * matiere[i][1]
+    moyenne = moyenne + bonus
+    for i in range (len(matiere)):
+        coef = coef + matiere[i][1]
+    moyenne = moyenne // coef
+    return moyenne
+
 #############################################
 ###         Programme Principale          ###
 #############################################
@@ -50,8 +61,8 @@ while continuer:
 
     print("=== Menu moyenne ===")
     print("1. Entrer les notes")
-    print("2. ")
-    print("3. ")
+    print("2. Points bonus")
+    print("3. Calculer la moyenne")
     print("4. Quitter")
     choix = input("\nVotre choix : ")
 
@@ -61,3 +72,11 @@ while continuer:
         notes = entrer_notes(matiere)
         for i in range (len(matiere)):
             print(f'Voici le tableau de note : {matiere[i][0], notes[i]}')
+    if choix == "2":
+        print("Entrer vos points sur la matière facultative")
+        bonus = int(input("Points : "))
+        bonus = calcul_bonus(bonus)
+        print(f'Vous avez {bonus} points bonus')
+    if choix == "3":
+        moyenne = calcul_moyenne(notes, matiere, bonus)
+        print(f'Votre moyenne est de : {moyenne}')
