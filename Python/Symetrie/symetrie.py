@@ -11,7 +11,7 @@ Tab = [(0,1,1,1,1,1,1,1,1,0),
        (1,0,1,0,0,0,0,1,0,1),
        (1,0,0,1,1,1,1,0,0,1),
        (1,0,0,0,0,0,0,0,0,1),
-       (0,1,1,1,1,1,1,1,1,0)]
+       (0,1,1,1,1,1,1,1,0,0)]
 i = int(0)
 j = int(0)
 
@@ -20,15 +20,20 @@ j = int(0)
 ### I pour le n° de colonne
 ### J pour la position sur la ligne
 
-def symetrie ():
+def symetrie (Tab):
     i = int(0)
     j = int(0)
+    sym = 0
     for i in range(0,9,1):
         for j in range(0,4,1):
             if Tab[i][j] == Tab[i][9-j]:
-                print("Symetrique")
+                sym = 0
             else:
-                print("Non Symetrique")
+                sym += 1
+    if sym == 0:
+        print("Image Symetrique")
+    else:
+        print("Image NON Symetrique")
 
 ### Fonction d'affichage de l'image
 ###
@@ -48,9 +53,9 @@ def AfficheImage(Tab):
 ############ MENU ###########
 while continuer:
     print("=== Menu image ===")
-    print("1. Affciher l'image")
-    print("2. Points bonus")
-    print("3. Calculer la moyenne")
+    print("1. Afficher l'image")
+    print("2. Verifier Symetrie")
+    print("3. ")
     print("4. Quitter")
     choix = input("\nVotre choix : ")
 
@@ -58,8 +63,10 @@ while continuer:
 
     if choix == "1":
         AfficheImage(Tab)
-    #if choix == "2":
-
+    if choix == "2":
+        symetrie(Tab)
+    if choix == "4":
+        continuer = False
     #if choix == "3":
 
         
