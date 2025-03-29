@@ -12,8 +12,6 @@ Tab = [(0,1,1,1,1,1,1,1,1,0),
        (1,0,0,1,1,1,1,0,0,1),
        (1,0,0,0,0,0,0,0,0,1),
        (0,1,1,1,1,1,1,1,0,0)]
-i = int(0)
-j = int(0)
 
 ### Fonction Mystere du sujet
 ### Verification de la symetrie d'une image
@@ -24,12 +22,11 @@ def symetrie (Tab):
     i = int(0)
     j = int(0)
     sym = 0
-    for i in range(0,9,1):
-        for j in range(0,4,1):
-            if Tab[i][j] == Tab[i][9-j]:
-                sym = 0
-            else:
+    for i in range(0,10,1):
+        for j in range(0,5,1):
+            if Tab[i][j] != Tab[i][9-j]:
                 sym += 1
+
     if sym == 0:
         print("Image Symetrique")
     else:
